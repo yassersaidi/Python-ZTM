@@ -20,6 +20,7 @@ def convert(source,export)->Image:
         for image in image_list:
             png_image = Image.open(source+image)
             png_image.save((export+image.split('.')[0]+".png"),'png')
+            print(f"Done With {image}")
     else:
         print("No Files found in the folder!")
 try:
