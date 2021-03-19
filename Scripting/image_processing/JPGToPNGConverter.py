@@ -18,8 +18,8 @@ def convert(source,export)->Image:
             if file.split(".")[1] == 'jpg'.casefold():
                 image_list.append(file)
         for image in image_list:
-            png_image = Image.open(os.path.realpath(source+"/"+image))
-            png_image.save(os.path.realpath(export+"/"+image.split('.')[0]+".png"),'png')
+            png_image = Image.open(source+image)
+            png_image.save((export+image.split('.')[0]+".png"),'png')
     else:
         print("No Files found in the folder!")
 try:
@@ -27,4 +27,4 @@ try:
     check_folder(export_folder)
     convert(source_folder,export_folder)
 except:
-    print("Enter Name of the source and output folders !")
+    print("Enter the name of the source and the output folders !")
